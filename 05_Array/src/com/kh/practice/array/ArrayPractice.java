@@ -206,6 +206,7 @@ public class ArrayPractice {
 		}System.out.println();
 		int big = 0;
 		int small = 0;
+		
 		for(int i = 0; i<num.length; i++) {
 			int a = num[i];
 			boolean isbig = false;
@@ -237,27 +238,25 @@ public class ArrayPractice {
 		}
 		System.out.println("최소값: "+small);
 		
-		/*
-		 * for(int i=0; i<arr.length; i++) {
-			char ch = arr[i]; // 중복인지 검사하고자 하는 문자
-			boolean isDup = false;
-			//문자 중복 검사
-			//현재 위치에서 앞쪽의 단어들 중 현재단어와 일치하는 값이 있는지 확인
-			for(int j = 0; j<i; j++) {
-				if(ch == arr[j]) {
-					//중복
-					isDup = true;
-					break;
-				}
-			}
-			if(!isDup) {
-				System.out.print(ch+", ");
-				count++;
-		 */
+		
 		
 		
 		
 	}
+	
+	
+	public void practice10() {
+		
+		int [] num = new int [10];
+		
+		for(int i = 0; i<num.length; i++) {
+			
+		int random = (int)(Math.random() * 10 + 1);
+		}
+		
+	}
+	
+	
 }
 		
 
