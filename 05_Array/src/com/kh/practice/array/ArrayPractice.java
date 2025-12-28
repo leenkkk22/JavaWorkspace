@@ -157,25 +157,35 @@ public class ArrayPractice {
 		char[] arr = str.toCharArray();
 		
 		System.out.println("문자: ");
-		String tt = sc.next();
+		char word = sc.next().charAt(0);
+		
+		int same = 0;
 		
 		System.out.println(arr);
+		System.out.println();
 		for(int i=0; i<arr.length; i++) {
 			 char ch  = arr[i]; // 중복인지 검사하고자 하는 문자
-			 boolean is = false;
+			 boolean isDup = false;
 				//문자 중복 검사
 				//현재 위치에서 앞쪽의 단어들 중 현재단어와 일치하는 값이 있는지 확인
 				for(int j = 0; j<i; j++) {
-					if(ch == arr[j]) {
+					if(word == arr[j] ) {
 						//중복
+						 isDup = true;
+						 break;
 						
 					}
 				}
 				
+				if(isDup) {
+					same += 1;
+					
+				}
 		
 		
 		
 		}
+		System.out.println(word + " 개수: " + same);
 	}
 	
 	
@@ -250,9 +260,24 @@ public class ArrayPractice {
 		int [] num = new int [10];
 		
 		for(int i = 0; i<num.length; i++) {
-			
 		int random = (int)(Math.random() * 10 + 1);
+		num[i] = random;
+		System.out.print(num[i]);
 		}
+		System.out.println();
+		
+		for(int i = 0; i<num.length; i++) {
+			int same = (int)(Math.random() * 10 + 1);
+			for(int j = 0; j<i; j++) {
+				if(!(num[i] == same)) 
+				num[i] = same;
+			}
+			System.out.print(num[i]+ " ");
+		}
+		
+		
+		
+		
 		
 	}
 	
