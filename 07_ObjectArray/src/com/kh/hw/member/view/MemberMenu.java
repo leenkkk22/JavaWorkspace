@@ -179,7 +179,7 @@ public class MemberMenu {
 		String id = sc.nextLine();
 		System.out.print("비밀번호 : ");
 		String pw = sc.nextLine();
-		System.out.println(mc.updatePassword(id, pw) ? "수정 성공" : "존재하지 않는 아이디");
+		System.out.println(mc.updatePassword(id, pw) ? "수정이 성공적으로 되었습니다." : "존재하지 않는 아이디입니다");
 	}
 
 	public void updateName() {
@@ -187,7 +187,7 @@ public class MemberMenu {
 		String id = sc.nextLine();
 		System.out.print("이름 : ");
 		String name = sc.nextLine();
-		System.out.println(mc.updateName(id, name) ? "수정 성공" : "존재하지 않는 아이디");
+		System.out.println(mc.updateName(id, name) ? "수정이 성공적으로 되었습니다." : "존재하지 않는 아이디입니다");
 	}
 
 	public void updateEmail() {
@@ -195,7 +195,7 @@ public class MemberMenu {
 		String id = sc.nextLine();
 		System.out.print("이메일 : ");
 		String email = sc.nextLine();
-		System.out.println(mc.updateEmail(id, email) ? "수정 성공" : "존재하지 않는 아이디");
+		System.out.println(mc.updateEmail(id, email) ? "수정이 성공적으로 되었습니다." : "존재하지 않는 아이디입니다");
 	}
 
 	public void deleteMember() {
@@ -216,7 +216,7 @@ public class MemberMenu {
 		String id = sc.nextLine();
 		System.out.print("정말 삭제하시겠습니까?(y/n) : ");
 		if (sc.nextLine().equalsIgnoreCase("y")) {
-			System.out.println(mc.delete(id) ? "삭제 성공" : "존재하지 않는 아이디");
+			System.out.println(mc.delete(id) ? "삭제가 성공적으로 되었습니다." : "존재하지 않는 아이디입니다");
 		}
 	}
 
