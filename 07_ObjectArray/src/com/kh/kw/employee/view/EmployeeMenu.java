@@ -54,9 +54,7 @@ public class EmployeeMenu {
 		String empHp = sc.next();
 		System.out.println("추가 정보를 더 입력하시곘습니까?(Y/N): ");
 		char ch = sc.next().charAt(0);
-		
-		
-		ec.add(empNum, empName, empGen, empHp);
+	
 		
 		if(ch == 'y' || ch == 'Y') {
 			System.out.println("사원 부서: ");
@@ -68,8 +66,10 @@ public class EmployeeMenu {
 		
 			ec.add(empNum, empName, empGen, empHp, empPart, empSal, empBonus);
 			
-		} 
-		System.out.print(empNum + empName+ empGen+ empHp);
+		} else { 
+			ec.add(empNum, empName, empGen, empHp);
+		}
+		
 	}
 	
 	public void updateEmp() {
@@ -86,16 +86,20 @@ public class EmployeeMenu {
 		case 1:
 			System.out.print("업데이트할 전화번호: ");
 			int empTel = sc.nextInt();
+			ec.modify(empTel);
 			break;
 		case 2:
 			System.out.print("업데이트할 사원 연봉: ");
 			int empSal = sc.nextInt();
+			ec.modify(empSal);
 			break;
 		case 3:
 			System.out.print("업데이트할 보너스 율: ");
 			double empBonus = sc.nextDouble();
+			ec.modify(empBonus);
 			break;
 		case 9:
+			System.out.print("메인 메뉴로 돌아갑니다.");
 			return;
 		default :
 			System.out.println("잘못된 값이 입력 되어 처음으로 돌아갑니다.");
@@ -108,13 +112,20 @@ public class EmployeeMenu {
 		System.out.print("정말 삭제하시겠습니까? (Y/N): ");
 		char ch = sc.next().charAt(0);
 		if (ch == 'y' || ch == 'Y') {
+			ec.remove();
 			System.out.println("데이터 삭제에 성공하였습니다.");
 		} 
 	}
 	
 	
 	public void printEmp() {
-		ec.inform();
+	    String info = ec.inform();  // ⭐ 먼저 선언
+
+	    if (info == null || info.isEmpty()) {
+	        System.out.println("사원 데이터가 없습니다.");
+	    } else {
+	        System.out.println(info);
+	    }
 	}
 	
 

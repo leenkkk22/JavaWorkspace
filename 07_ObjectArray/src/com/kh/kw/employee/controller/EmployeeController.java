@@ -38,11 +38,15 @@ public class EmployeeController {
 	}
 	
 	public Employee remove() {
-		return null;
+		e = new Employee();
+	    return e;
 	}
 	
 	public String inform() {
-		return e.printEmployee();
+	    if (e.getEmpNo() == 0) {
+	        return null;
+	    }
+	    return e.printEmployee();
 	}
 	
 
